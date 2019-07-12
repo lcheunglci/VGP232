@@ -42,8 +42,10 @@ namespace Week1
             //int total = Sum(1,2);
             //Example3();
 
-            Reader myReader = new Reader("data.txt");
-            myReader.PrintAll();
+            //Reader myReader = new Reader("data.txt");
+            //myReader.PrintAll();
+
+            Example4();
 
             Console.ReadKey();
         }
@@ -110,5 +112,27 @@ namespace Week1
             }
         }
 
+        public class Pokemon
+        {
+            public string Name { get; set; }
+            public int HP { get; set; }
+            public int Attack { get; set; }
+            public int Defense { get; set; }
+            public int MaxCp { get; set; }
+        }
+
+        static void Example4()
+        {
+            // Name(string) HP(int)  Attack(int) Defense(int) Max CP(int)
+            string line = "Bulbasaur, 128, 118, 111, 1115";
+            string[] values = line.Split(",");
+            Pokemon bulbasaur = new Pokemon();
+            bulbasaur.Name = values[0];
+            bulbasaur.HP = int.Parse(values[1]);
+            bulbasaur.Attack = int.Parse(values[2]);
+            bulbasaur.Defense = int.Parse(values[3]);
+            bulbasaur.MaxCp = int.Parse(values[4]);
+
+        }
     }
 }
