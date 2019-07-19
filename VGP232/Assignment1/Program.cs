@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 
-
 // Assignment 1
 // NAME: 
 // STUDENT NUMBER: 
@@ -30,7 +29,7 @@ namespace Assignment1
 
             // The flag to determine if we need to sort the results via name.
             bool sortEnabled = false;
-            
+
             // The results to be output to a file or to the console
             List<Pokemon> results = new List<Pokemon>();
 
@@ -42,10 +41,62 @@ namespace Assignment1
             #region Interactive Mode
             // Interactive mode
             // TODO: prompt user for the input to populate the parameters
+
+            if (args.Length == 0)
+            {
+                bool requiredInput = true;
+                bool saveResults = false;
+                while (requiredInput)
+                {
+                    if (string.IsNullOrEmpty(inputFile))
+                    {
+                        Console.Write("Please enter the path to the input file to load: ");
+                        inputFile = Console.ReadLine();
+                    }
+
+                    if (string.IsNullOrEmpty(inputFile))
+                    {
+                        continue;
+                    }
+
+                    Console.WriteLine("Do you want to save the results? (Y/N) ");
+                    string choice = Console.ReadLine();
+                    if (choice.ToUpper() == "Y")
+                    {
+                        saveResults = true;
+                        Console.WriteLine("Please enter the output file path to save the results");
+                        outputFile = Console.ReadLine();
+                        if (string.IsNullOrEmpty(outputFile))
+                        {
+                            continue;
+                        }
+                    }
+
+                    Console.WriteLine("Would you like to know how many entries are loaded? (Y/N)");
+                    choice = Console.ReadLine();
+                    if (choice.ToUpper() == "Y")
+                    {
+                        displayCount = true;
+                    }
+
+                    Console.WriteLine("Would you like to see the results sorted alphabetically? (Y/N)");
+                    choice = Console.ReadLine();
+                    if (choice.ToUpper() == "Y")
+                    {
+                        sortEnabled = true;
+                    }
+                    if (!string.IsNullOrEmpty(inputFile) &&
+                        (!saveResults || saveResults && !string.IsNullOrEmpty(outputFile)))
+                    {
+                        requiredInput = false;
+                    }
+                }
+            }
+
             #endregion
 
-            #region Scripted Mode
-            // Scripted Mode
+            #region Quiet Mode
+            // Quiet Mode
             for (int i = 0; i < args.Length; i++)
             {
                 // h or --help for help to output the instructions on how to use it
@@ -54,15 +105,17 @@ namespace Assignment1
                 {
                     Console.WriteLine("-i <path> or --input <path> loads the input file path specified (required)");
                     Console.WriteLine("-o <path> or --output <path> saves result in the output file path specified (optional)");
-                    
                     // TODO: include help info for count
                     //"-c or --count - displays or saves the number of entries are in the text file (optional)";
-                    
+                    Console.WriteLine("-c or --count - displays or saves the number of entries are in the text file (optional)");
+
                     // TODO: include help info for append
                     //"-a or --append for appending to an existing output file (optional)";
+                    Console.WriteLine("-a or --append for appending to an existing output file (optional)");
 
                     // TODO: include help info for sort
                     //"-s or --sort - outputs the results sorted by name";
+                    Console.WriteLine("-s or --sort - outputs the results sorted by name");
 
                     break;
                 }
@@ -73,24 +126,12 @@ namespace Assignment1
                         // validation to make sure we do have an argument after the flag
                         ++i;
                         inputFile = args[i];
-
-                        if (string.IsNullOrEmpty(inputFile))
-                        {
-                            // TODO: print no input file specified.
-                        }
-                        else if (!File.Exists(inputFile))
-                        {
-                            // TODO: print the file specified does not exist.
-                        }
-                        else
-                        {
-                            results = Parse(inputFile);
-                        }
                     }
                 }
                 else if (args[i] == "-s" || args[i] == "--sort")
                 {
                     // TODO: set the sortEnabled flag
+                    sortEnabled = true;
                 }
                 else if (args[i] == "-c" || args[i] == "--count")
                 {
@@ -99,6 +140,7 @@ namespace Assignment1
                 else if (args[i] == "-a" || args[i] == "--append")
                 {
                     // TODO: set the appendToFile flag
+                    appendToFile = true;
                 }
                 else if (args[i] == "-o" || args[i] == "--output")
                 {
@@ -110,11 +152,13 @@ namespace Assignment1
                         string filePath = args[i];
                         if (string.IsNullOrEmpty(filePath))
                         {
+                            Console.WriteLine("No output file specified.");
                             // TODO: print No output file specified.
                         }
                         else
                         {
                             // TODO: set the output file to the filePath
+                            outputFile = args[i];
                         }
                     }
                 }
@@ -124,6 +168,21 @@ namespace Assignment1
                 }
             }
             #endregion
+
+            if (string.IsNullOrEmpty(inputFile))
+            {
+                // TODO: print no input file specified.
+                Console.WriteLine("No input file specified.");
+            }
+            else if (!File.Exists(inputFile))
+            {
+                // TODO: print the file specified does not exist.
+                Console.WriteLine(inputFile + " specified does not exist");
+            }
+            else
+            {
+                results = Parse(inputFile);
+            }
 
             if (sortEnabled)
             {
@@ -149,6 +208,15 @@ namespace Assignment1
                     using (StreamWriter writer = new StreamWriter(fs))
                     {
                         // TODO: use the writer to output the results.  Hint: use writer.WriteLine
+                        if (displayCount)
+                        {
+                            writer.WriteLine("There are {0} entries", results.Count);
+                        }
+
+                        for (int i = 0; i < results.Count; i++)
+                        {
+                            writer.WriteLine(results[i]);
+                        }
                     }
                 }
                 else
@@ -186,24 +254,43 @@ namespace Assignment1
 
             List<Pokemon> output = new List<Pokemon>();
 
-            using (StreamReader reader = new StreamReader(fileName))
-            {
-                // The header is the first line i.e.
-                // Name,HP,Attack,Defense,MaxCP
-                string header = reader.ReadLine();
+            //using (StreamReader reader = new StreamReader(fileName))
+            //{
+            //    // The header is the first line i.e.
+            //    // Name,HP,Attack,Defense,MaxCP
+            //    string header = reader.ReadLine();
 
-                // The rest of the lines looks like the following:
-                // Bulbasaur,128,118,111,1115
-                while (reader.Peek() > 0)
-                {
-                    string line = reader.ReadLine();
-                    // string[] values = line.Split(',');
-                    Pokemon pokemon = new Pokemon();
-                    // Populate the properties of the pokemon
+            //    // The rest of the lines looks like the following:
+            //    // Bulbasaur,128,118,111,1115
+            //    while (reader.Peek() > 0)
+            //    {
+            //        string line = reader.ReadLine();
+            //        string[] values = line.Split(',');
+            //        Pokemon pok;
+            //        if (Pokemon.TryParse(line, out pok))
+            //        {
+            //            Add()
+            //        }
+            //        Pokemon pokemon = new Pokemon {
+            //            Name = values[0],
+            //            HP = int.Parse(values[1]),
+            //            Attack = int.Parse(values[2]),
+            //            Defense = int.Parse(values[3]),
+            //            MaxCP = int.Parse(values[4])
+            //        };
 
-                    // TODO: Add the pokemon to the list
-                }
-            }
+            //        //pokemon.Name = values[0];
+            //        //pokemon.HP = values[1];
+            //        //pokemon.Attack = values[2];
+            //        //pokemon.Defense = values[3];
+            //        //pokemon.MaxCP = values[4];
+
+            //        // Populate the properties of the pokemon
+
+            //        // TODO: Add the pokemon to the list
+            //        output.Add(pokemon);
+            //    }
+            //}
 
             return output;
         }

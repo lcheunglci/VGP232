@@ -9,10 +9,10 @@ namespace Assignment1
     public class Pokemon
     {
         public string Name { get; set; }
-        public string HP { get; set; }
-        public string Attack { get; set; }
-        public string Defense { get; set; }
-        public string MaxCP { get; set; }
+        public int HP { get; set; }
+        public int Attack { get; set; }
+        public int Defense { get; set; }
+        public int MaxCP { get; set; }
 
         /// <summary>
         /// The Comparator function to check for name
@@ -25,6 +25,16 @@ namespace Assignment1
             return left.Name.CompareTo(right.Name);
         }
 
+        public static int CompareByPokemonHP(Pokemon left, Pokemon right)
+        {
+            return left.HP.CompareTo(right.HP);
+        }
+
+        public static int CompareByPokemonMaxCp(Pokemon left, Pokemon right)
+        {
+            return left.MaxCP.CompareTo(right.MaxCP);
+        }
+
         /// <summary>
         /// The Pokemon string with all the properties
         /// </summary>
@@ -33,5 +43,13 @@ namespace Assignment1
         {
             return string.Format($"{Name} - HP: {HP} Attack: {Attack} Defense {Defense} MaxCP: {MaxCP}");
         }
+
+        //public static bool TryParse(string line, out Pokemon pok)
+        //{
+        //    pok = new Pokemon();
+        //    // split 
+        //    // initialize a pokemon
+        //    // set the values
+        //}
     }
 }
