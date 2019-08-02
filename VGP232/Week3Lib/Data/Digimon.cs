@@ -45,5 +45,29 @@ namespace Week3Lib.Data
         {
             return string.Format($"{DigiEvolution} {Name}");
         }
+
+        public static Digimon CreateDigimon(string name)
+        {
+            Random rand = new Random();
+
+            Console.WriteLine("Creating Digimon...");
+            Digimon mon = new Digimon
+            {
+                Name = name,
+                Charisma = rand.Next(0, 10),
+                Defense = rand.Next(0, 10),
+                Speed = rand.Next(0, 10),
+                Spirit = rand.Next(0, 10),
+                Strength = rand.Next(0, 10),
+                Tolerance = rand.Next(0, 10),
+                Wisdom = rand.Next(0, 10),
+                DigiEvolution = (Evolution)rand.Next((int)Evolution.Baby, (int)Evolution.Mega)
+            };
+
+            mon.CalculateDamage();
+
+            return mon;
+        }
+
     }
 }
