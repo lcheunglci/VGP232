@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" Text="Hello VGP232" VerticalAlignment="Top" Width="235" FontSize="24" FontFamily="Showcard Gothic"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" Text="Hello VGP232" VerticalAlignment="Top" Width="235" FontSize="{Binding ElementName=slider, Path=Value}" FontFamily="Showcard Gothic"/>
         <Button Content="Law" HorizontalAlignment="Left" Margin="558,193,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <TextBlock x:Name="myLabel" HorizontalAlignment="Left" Margin="260,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="558,232,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Slider x:Name="slider" Value="{Binding ElementName=number, Path=Text, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="50,212,0,0"/>
+        <Slider x:Name="slider" Value="{Binding ElementName=number, Path=Text, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="50,212,0,0" Maximum="100"/>
         <TextBox x:Name="number" Text="{Binding ElementName=slider, Path=Value}" HorizontalAlignment="Left" Height="23" Margin="125,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ListBox x:Name="myListbox" HorizontalAlignment="Left" Height="143" Margin="310,251,0,0" VerticalAlignment="Top" Width="201" SelectionChanged="MyListbox_SelectionChanged" MouseDoubleClick="MyListbox_MouseDoubleClick"/>
         <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="625,43,0,0" VerticalAlignment="Top" Width="75" Click="BtnSave_Click"/>

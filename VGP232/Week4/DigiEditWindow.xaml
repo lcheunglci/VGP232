@@ -19,7 +19,7 @@
             <ColumnDefinition Width="157*"/>
             <ColumnDefinition Width="635*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="37,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Wisdom" VerticalAlignment="Top" Height="16" Width="82"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Wisdom" VerticalAlignment="Top" Height="16" Width="82" FontWeight="Bold"/>
         <TextBlock HorizontalAlignment="Left" Margin="52,25,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Spirit" VerticalAlignment="Top" Height="16" Width="52"/>
         <TextBlock HorizontalAlignment="Left" Margin="35,32,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Strength" VerticalAlignment="Top" Height="16" Width="86"/>
         <TextBlock HorizontalAlignment="Left" Margin="48,26,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="16" Width="60"/>
