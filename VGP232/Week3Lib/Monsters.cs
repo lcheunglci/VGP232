@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Week3Lib
 {
 
     [XmlRoot("Monsters")]
-    public class Monsters : List<Monster>, IXmlSerializable
+    public class Monsters : ObservableCollection<Monster>, IXmlSerializable
     {
         public bool LoadXML(string path)
         {
@@ -20,7 +21,11 @@ namespace Week3Lib
                 {
                     XmlSerializer xs = new XmlSerializer(typeof(Monsters));
                     this.Clear();
-                    this.AddRange(xs.Deserialize(fs) as Monsters);
+                    var temp = xs.Deserialize(fs) as Monsters;
+                    foreach (var mon in temp)
+                    {
+                        this.Add(mon);
+                    }
                 }
             }
             catch (Exception)

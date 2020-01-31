@@ -27,6 +27,7 @@ namespace Week4
         {
             InitializeComponent();
             Mons = new Monsters();
+            lbMonsters.ItemsSource = Mons;
         }
 
         private void LoadClicked(object sender, RoutedEventArgs e)
@@ -38,16 +39,19 @@ namespace Week4
                 MonsterLoader loader = new MonsterLoader();
                 if (System.IO.Path.GetExtension(openFileDialog.FileName) == ".json")
                 {
-                    Mons.AddRange(loader.LoadListJSON(openFileDialog.FileName));
-                    lbMonsters.ItemsSource = null;
-                    lbMonsters.ItemsSource = Mons;
-
+                    Mons.Clear();
+                    var temp = loader.LoadListJSON(openFileDialog.FileName);
+                    foreach (var mon in temp)
+                    {
+                        Mons.Add(mon);
+                    }
+                    // No longer need do the below for updating the list when I change the Monsters class to inherit from ObservableCollection
+                    // lbMonsters.ItemsSource = null;
+                    // lbMonsters.ItemsSource = Mons;
                 }
                 else if (System.IO.Path.GetExtension(openFileDialog.FileName) == ".xml")
                 {
-                    Mons.AddRange(loader.LoadListXML(openFileDialog.FileName));
-                    lbMonsters.ItemsSource = null;
-                    lbMonsters.ItemsSource = Mons;
+                    Mons = loader.LoadListXML(openFileDialog.FileName);
                 }
             }
         }
@@ -81,8 +85,6 @@ namespace Week4
             if (window.ShowDialog() == true)
             {
                 Mons.Add(window.SavedMonster);
-                lbMonsters.ItemsSource = null;
-                lbMonsters.ItemsSource = Mons;
             }
             //window.Show();
         }
@@ -96,8 +98,9 @@ namespace Week4
             if (window.ShowDialog() == true)
             {
                 Mons[selectedIndex] = window.SavedMonster;
-                lbMonsters.ItemsSource = null;
-                lbMonsters.ItemsSource = Mons;
+                // No longer need do the below for updating the list when I change the Monsters class to inherit from ObservableCollection
+                // lbMonsters.ItemsSource = null;
+                // lbMonsters.ItemsSource = Mons;
             }
         }
 
