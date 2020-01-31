@@ -32,5 +32,11 @@ namespace Week3Lib
         [XmlArray("parts")]
         [XmlArrayItem("part")]
         public List<string> parts = new List<string>();
+
+
+        public override string ToString()
+        {
+            return $"{name} - {health}";
+        }
     }
 }
