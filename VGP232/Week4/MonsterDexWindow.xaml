@@ -19,6 +19,9 @@
             <Button Content="Edit" Width="75" Click="EditClicked"/>
             <Button Content="Add" Width="75" Click="AddClicked"/>
             <Button Content="Remove" Width="75" Click="RemoveClicked"/>
+            <Slider x:Name="slider" Maximum="100" Minimum="5" />
+            <TextBlock  TextWrapping="Wrap" FontSize="{Binding ElementName=slider, Path=Value, Mode=OneWay}" Text="{Binding ElementName=slider, Path=Value, Mode=OneWay}"/>
+            <Label Content="Label"/>
 
         </StackPanel>
 

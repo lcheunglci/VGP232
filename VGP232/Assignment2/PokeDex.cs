@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Assignment2
 {
@@ -25,5 +26,28 @@ namespace Assignment2
             }
         }
 
+        public void Load(string inputFile)
+        {
+            if (Path.GetExtension(inputFile) == ".json")
+            {
+
+            }
+        }
+
+        bool LoadAsXML(string filePath)
+        {
+            this.Clear();
+            using (FileStream fs = new FileStream(filePath, FileMode.Open))
+            {
+                XmlSerializer xs = new XmlSerializer(typeof(List<Pokemon>));
+                var temp = (xs.Deserialize(fs) as List<Pokemon>);
+                foreach (var pokemon in temp)
+                {
+                    this.Add(pokemon);
+                }
+
+            }
+            return true;
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Week3Lib
 {
 
     [XmlRoot("Monsters")]
-    public class Monsters : ObservableCollection<Monster>, IXmlSerializable
+    public class Monsters : List<Monster>, IXmlSerializable
     {
         public bool LoadXML(string path)
         {

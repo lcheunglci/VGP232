@@ -45,6 +45,8 @@ namespace Week4
                     {
                         Mons.Add(mon);
                     }
+                    lbMonsters.Items.Refresh();
+
                     // No longer need do the below for updating the list when I change the Monsters class to inherit from ObservableCollection
                     // lbMonsters.ItemsSource = null;
                     // lbMonsters.ItemsSource = Mons;
@@ -86,6 +88,7 @@ namespace Week4
             {
                 Mons.Add(window.SavedMonster);
             }
+            lbMonsters.Items.Refresh();
             //window.Show();
         }
 
@@ -98,6 +101,7 @@ namespace Week4
             if (window.ShowDialog() == true)
             {
                 Mons[selectedIndex] = window.SavedMonster;
+                lbMonsters.Items.Refresh();
                 // No longer need do the below for updating the list when I change the Monsters class to inherit from ObservableCollection
                 // lbMonsters.ItemsSource = null;
                 // lbMonsters.ItemsSource = Mons;

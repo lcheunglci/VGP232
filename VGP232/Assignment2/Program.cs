@@ -32,7 +32,7 @@ namespace Assignment2
             bool sortEnabled = false;
 
             // The results to be output to a file or to the console
-            List<Pokemon> results = new List<Pokemon>();
+            PokeDex results = new PokeDex();
 
             #endregion
 
@@ -84,7 +84,7 @@ namespace Assignment2
                         }
                         else
                         {
-                            results = Parse(inputFile);
+                            results.Load(inputFile);
                         }
                     }
                 }

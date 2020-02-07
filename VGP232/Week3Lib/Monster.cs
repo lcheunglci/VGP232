@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,32 @@ namespace Week3Lib
     }
 
     [Serializable]
-    public class Monster
+    public class Monster : INotifyPropertyChanged
     {
         [XmlAttribute]
         public string name;
         public int health;
         public Ability ability;
         public Element element;
+
+        private int _hp;
+        public int HP
+        {
+            get
+            {
+                return _hp;
+            }
+            set
+            {
+                _hp = value;
+                NotifyPropertyChanged("HP");
+            }
+        }
+
+        private void NotifyPropertyChanged(String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         [XmlIgnore]
         public float secretNumber;
@@ -33,10 +53,13 @@ namespace Week3Lib
         [XmlArrayItem("part")]
         public List<string> parts = new List<string>();
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
 
         public override string ToString()
         {
-            return $"{name} - {health}";
+            return $"{name}, {health}";
         }
     }
 }
