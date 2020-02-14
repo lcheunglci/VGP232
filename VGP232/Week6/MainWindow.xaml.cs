@@ -25,10 +25,13 @@ namespace Week6
         public MainWindow()
         {
             InitializeComponent();
+            Key = "1111111111111111";
+            // Add 0
+            // 0000000001830026
         }
 
         const string API_URL = "https://api.chucknorris.io/";
-
+        public string Key { get; set; }
 
         private void GetJokeButtonPressed(object sender, RoutedEventArgs e)
         {
@@ -54,8 +57,41 @@ namespace Week6
                         txtJoke.Text = joke.value;
                     }
                 }
-
             }
+        }
+
+        private void DecryptButtonPressed(object sender, RoutedEventArgs e)
+        {
+            string cipher = txtEncrypted.Text;
+            if (string.IsNullOrEmpty(cipher) || string.IsNullOrEmpty(Key))
+            {
+                return;
+            }
+            string plain = string.Empty;
+
+            try
+            {
+                plain = AES.AESDecrypt(Key, cipher);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to decrypt: " + ex.Message);
+            }
+
+            txtDecrypted.Text = plain;
+        }
+
+        private void EncryptButtonPressed(object sender, RoutedEventArgs e)
+        {
+            string plain = txtJoke.Text;
+            if (string.IsNullOrEmpty(plain) || string.IsNullOrEmpty(Key))
+            {
+                return;
+            }
+
+            string cipher = AES.AESEncrypt(Key, plain);
+
+            txtEncrypted.Text = cipher;
         }
     }
 }

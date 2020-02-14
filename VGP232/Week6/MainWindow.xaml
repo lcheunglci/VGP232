@@ -7,8 +7,13 @@
         mc:Ignorable="d"
         Title="Week6 Example" Height="450" Width="800">
     <StackPanel>
-        <TextBlock>Joke of the day</TextBlock>
+        <TextBlock Margin="20 10">Joke of the day</TextBlock>
         <Button Click="GetJokeButtonPressed">Get Joke</Button>
         <TextBox x:Name="txtJoke"></TextBox>
+
+        <Button Click="EncryptButtonPressed">Encrypt</Button>
+        <TextBox x:Name="txtEncrypted"></TextBox>
+        <Button Click="DecryptButtonPressed">Decrypt</Button>
+        <TextBox x:Name="txtDecrypted"></TextBox>
     </StackPanel>
 </Window>
