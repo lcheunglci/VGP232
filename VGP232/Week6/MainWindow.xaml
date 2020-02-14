@@ -1,0 +1,14 @@
+﻿<Window x:Class="Week6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week6"
+        mc:Ignorable="d"
+        Title="Week6 Example" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock>Joke of the day</TextBlock>
+        <Button Click="GetJokeButtonPressed">Get Joke</Button>
+        <TextBox x:Name="txtJoke"></TextBox>
+    </StackPanel>
+</Window>
