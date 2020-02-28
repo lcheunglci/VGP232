@@ -11,9 +11,9 @@
             <ColumnDefinition Width="413*"/>
             <ColumnDefinition Width="381*"/>
         </Grid.ColumnDefinitions>
-        <Canvas x:Name="canvasCharacter" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Height="296" Width="309" Margin="48,44,0,0">
-            <Image x:Name="imgBody" Source="zombie\body.png" Canvas.Left="172" Canvas.Top="149"></Image>
-            <Image x:Name="imgLeftArm" Source="zombie\arm.png" Canvas.Left="142" Canvas.Top="171" RenderTransformOrigin="0.5,0.5" Width="43">
+        <Canvas x:Name="canvasCharacter" HorizontalAlignment="Left"  VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Height="334" Width="309" Margin="48,44,0,0">
+            <Image x:Name="imgBody" Source="zombie\body.png" Canvas.Left="104" Canvas.Top="149"></Image>
+            <Image x:Name="imgLeftArm" Source="zombie\arm.png" Canvas.Left="74" Canvas.Top="171" RenderTransformOrigin="0.5,0.5" Width="43">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -23,8 +23,8 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image x:Name="imgRightArm" Source="zombie\arm.png" Canvas.Left="236" Canvas.Top="169"></Image>
-            <Image x:Name="imgLeftLeg" Source="zombie\leg.png" Canvas.Left="202" Canvas.Top="216" Width="40">
+            <Image x:Name="imgRightArm" Source="zombie\arm.png" Canvas.Left="168" Canvas.Top="169"></Image>
+            <Image x:Name="imgLeftLeg" Source="zombie\leg.png" Canvas.Left="134" Canvas.Top="216" Width="40">
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -34,8 +34,8 @@
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Image x:Name="imgRightLeg" Source="zombie\leg.png" Canvas.Left="216" Canvas.Top="222"></Image>
-            <Image x:Name="imgHead" Source="zombie\head.png" Canvas.Left="156" Canvas.Top="55"></Image>
+            <Image x:Name="imgRightLeg" Source="zombie\leg.png" Canvas.Left="148" Canvas.Top="222"></Image>
+            <Image x:Name="imgHead" Source="zombie\head.png" Canvas.Left="88" Canvas.Top="55"></Image>
 
         </Canvas>
         <StackPanel Grid.Column="1">
