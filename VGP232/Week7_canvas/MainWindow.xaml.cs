@@ -43,6 +43,8 @@ namespace Week7_canvas
                 96d,
                 System.Windows.Media.PixelFormats.Default);
 
+            rtb.Render(canvasCharacter);
+
             BitmapEncoder encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(rtb));
 
