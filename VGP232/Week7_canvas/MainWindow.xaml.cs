@@ -90,7 +90,7 @@ namespace Week7_canvas
             selectedLanguageIndex = (selectedLanguageIndex + 1) % locales.Length;
 
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(locales[selectedLanguageIndex]);
-            GreetingsTxt.Text = strings.Hello;
+            GreetingsTxt.Text = strings.GoodBye;
         }
     }
 }
