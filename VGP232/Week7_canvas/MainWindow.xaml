@@ -44,6 +44,8 @@
             <ComboBox x:Name="cbArms" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
             <ComboBox x:Name="cbLegs" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120"/>
             <Button x:Name="btnSave" Click="SaveButtonPressed">Save</Button>
+            <TextBlock x:Name="GreetingsTxt">Hello</TextBlock>
+            <Button Click="ChangeLocale">Change Locale</Button>
         </StackPanel>
 
     </Grid>

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -78,6 +80,17 @@ namespace Week7_canvas
                     imgBody.Source = new BitmapImage(new Uri(newPath, UriKind.Relative));
                 }
             }
+        }
+
+        int selectedLanguageIndex = 0;
+        string[] locales = { "en-US", "fr", "zh", "jp" };
+
+        private void ChangeLocale(object sender, RoutedEventArgs e)
+        {
+            selectedLanguageIndex = (selectedLanguageIndex + 1) % locales.Length;
+
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(locales[selectedLanguageIndex]);
+            GreetingsTxt.Text = strings.Hello;
         }
     }
 }

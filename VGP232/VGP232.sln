@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week7", "Week7\Week7.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week7_canvas", "Week7_canvas\Week7_canvas.csproj", "{F81AA6CF-C203-4D76-8FA2-9F465D66BD98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week9Localization", "Week9Localization\Week9Localization.csproj", "{C5DBCA37-B364-4637-A180-0C9BA8633F40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{F81AA6CF-C203-4D76-8FA2-9F465D66BD98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F81AA6CF-C203-4D76-8FA2-9F465D66BD98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F81AA6CF-C203-4D76-8FA2-9F465D66BD98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DBCA37-B364-4637-A180-0C9BA8633F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DBCA37-B364-4637-A180-0C9BA8633F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DBCA37-B364-4637-A180-0C9BA8633F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DBCA37-B364-4637-A180-0C9BA8633F40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
