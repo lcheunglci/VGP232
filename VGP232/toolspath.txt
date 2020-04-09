@@ -1,8 +1,0 @@
-nUnit
-C:\tools\bin\net35\nunit3-console.exe
-
-nuGet
-C:\tools\nuget.exe
-
-msbuild
-C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe
