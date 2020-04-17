@@ -44,10 +44,10 @@ namespace Assignment1
                 {
                     Console.WriteLine("-i <path> or --input <path> loads the input file path specified (required)");
                     Console.WriteLine("-o <path> or --output <path> saves result in the output file path specified (optional)");
-                    
+
                     // TODO: include help info for count
                     //"-c or --count - show the number of entries in the input file (optional)";
-                    
+                    Console.WriteLine("-c or --count - show the number of entries in the input file (optional)");
                     // TODO: include help info for append
                     //"-a or --append for appending the output to existing output file (optional)";
 
@@ -81,6 +81,8 @@ namespace Assignment1
                 }
                 else if (args[i] == "-s" || args[i] == "--sort")
                 {
+                    ++i;
+                    sortColumnName = args[i];
                     // TODO: set the sortEnabled flag and see if the next argument is set for the column name
                     // TODO: set the sortColumnName string used for determining if there's another sort function.
                 }
@@ -119,7 +121,10 @@ namespace Assignment1
             if (sortEnabled)
             {
                 // TODO: add implementation to determine the column name to trigger a different sort.
-                
+                if (sortColumnName.Equals("hP", StringComparison.OrdinalIgnoreCase))
+                {
+                    results.Sort(Pokemon.CompareByPokemonHP);
+                }
                 // Sorts the list based off of the Pokemon name.
                 results.Sort(Pokemon.CompareByPokemonName);
             }

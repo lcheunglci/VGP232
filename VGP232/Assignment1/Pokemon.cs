@@ -25,6 +25,11 @@ namespace Assignment1
             return left.Name.CompareTo(right.Name);
         }
 
+        public static int CompareByPokemonHP(Pokemon left, Pokemon right)
+        {
+            return left.HP.CompareTo(right.HP);
+        }
+
         // TODO: add sort for each property i.e. CompareByPokemonHP, CompareByPokemonAttack, CompareByPokemonDefenese, CompareByPokemonMaxCP
 
         /// <summary>
