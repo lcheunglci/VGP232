@@ -12,6 +12,21 @@ namespace Week2
     {
         Account account;
 
+        [SetUp]
+        public void Initialization()
+        {
+            account = new Account(100);
+            // create a file
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            account = new Account(100);
+            // delete the file
+        }
+
+
         [Test]
         public void CreatedAccount()
         {
