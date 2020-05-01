@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Week3Lib
 {
+    public enum Element { Normal, Fire, Water, Wind, Light, Shadow };
     public class Weapon
     {
         public string Name { get; set; }
@@ -15,10 +16,12 @@ namespace Week3Lib
 
         public float Range { get; set; }
 
+        public Element WeaponElement { get; set; }
+
         public override string ToString()
         {
-            return string.Format("{0}, {1}, {2}, {3}", 
-                Name, Damage, AttackSpeed, Range);
+            return string.Format("{0}, {1}, {2}, {3}, {4}", 
+                Name, Damage, AttackSpeed, Range, WeaponElement);
         }
 
     }
