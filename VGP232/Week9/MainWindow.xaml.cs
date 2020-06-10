@@ -25,13 +25,10 @@ namespace Week9
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Weapon MyWeapon { get; set; }
-        public string MyName { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
-            MyName = "Lawrence";
+            this.DataContext = new Weapon() { Name = "Axe", Power = 10 };
 
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("zh");
             nameText.Text = Properties.Resources.greetings;

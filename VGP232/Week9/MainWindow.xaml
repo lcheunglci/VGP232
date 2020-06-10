@@ -28,9 +28,9 @@
             <RowDefinition Height="228*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,20,20,20" Grid.Row="1" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="29,34,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Power" VerticalAlignment="Top"/>
-        <TextBox x:Name="nameText" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="25,23,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="25,20,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,26,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Power" VerticalAlignment="Top"/>
+        <TextBox x:Name="nameText" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="25,23,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Name}"/>
+        <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="25,20,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Power}" />
         <Slider x:Name="mySlider" Grid.Column="3" HorizontalAlignment="Left" Margin="57.041,20,0,0" Grid.Row="2" VerticalAlignment="Top" Value="5" Width="100"/>
         <TextBlock x:Name="sliderText" Grid.Column="3" HorizontalAlignment="Left" Margin="203,20,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=mySlider,Path=Value, Mode=OneWay}" VerticalAlignment="Top" Background="White"/>
         <Image Grid.Column="3" HorizontalAlignment="Left" Height="67" Margin="220,126,0,0" Grid.Row="3" VerticalAlignment="Top" Width="67" Source="Images/character_roundPurple.png" MouseLeftButtonDown="selectionClicked" RenderTransformOrigin="0.908,0.518">
