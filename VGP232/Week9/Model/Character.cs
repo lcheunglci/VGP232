@@ -10,7 +10,6 @@ namespace Week9.Model
     {
         public string Face { get; set; }
         public string Name { get; set; }
-
         public string Dialogue { get; set; }
     }
 }

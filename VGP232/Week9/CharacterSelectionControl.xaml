@@ -11,9 +11,9 @@
             <ListBox.ItemTemplate>
                 <ItemContainerTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="faceImage"></Image>
-                        <TextBlock x:Name="charName"></TextBlock>
-                        <TextBlock x:Name="dialaogue"></TextBlock>
+                        <Image Source="{Binding Face}"></Image>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Dialogue}"></TextBlock>
                     </StackPanel>
                 </ItemContainerTemplate>
             </ListBox.ItemTemplate>

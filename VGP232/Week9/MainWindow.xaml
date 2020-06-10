@@ -33,7 +33,7 @@
         <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="25,20,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
         <Slider x:Name="mySlider" Grid.Column="3" HorizontalAlignment="Left" Margin="57.041,20,0,0" Grid.Row="2" VerticalAlignment="Top" Value="5" Width="100"/>
         <TextBlock x:Name="sliderText" Grid.Column="3" HorizontalAlignment="Left" Margin="203,20,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=mySlider,Path=Value, Mode=OneWay}" VerticalAlignment="Top" Background="White"/>
-        <Image Grid.Column="3" HorizontalAlignment="Left" Height="100" Margin="42,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="100" Source="character_handGreen.png" MouseLeftButtonDown="selectionClicked">
+        <Image Grid.Column="3" HorizontalAlignment="Left" Height="67" Margin="220,126,0,0" Grid.Row="3" VerticalAlignment="Top" Width="67" Source="Images/character_roundPurple.png" MouseLeftButtonDown="selectionClicked" RenderTransformOrigin="0.908,0.518">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -43,7 +43,7 @@
         </Image>
         <RadioButton x:Name="toggleBlue" Content="On" Grid.Column="1" HorizontalAlignment="Left" Margin="37,35,0,0" Grid.Row="3" VerticalAlignment="Top"/>
         <Rectangle Grid.Column="1" Fill="{Binding ElementName=toggleBlue, Path=IsChecked}" HorizontalAlignment="Left" Height="100" Margin="29,93,0,0" Grid.Row="3" Stroke="Black" VerticalAlignment="Top" Width="100"/>
-        <Image Grid.Column="3" HorizontalAlignment="Left" Height="100" Margin="162,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="100" Source="character_handYellow.png" MouseLeftButtonDown="selectionClicked">
+        <Image Grid.Column="3" HorizontalAlignment="Left" Height="67" Margin="121,126,0,0" Grid.Row="3" VerticalAlignment="Top" Width="67" Source="Images/character_roundYellow.png" MouseLeftButtonDown="selectionClicked">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -51,7 +51,7 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <Image Grid.Column="3" HorizontalAlignment="Left" Height="100" Margin="47,128,0,0" Grid.Row="3" VerticalAlignment="Top" Width="100" Source="character_handPurple.png" MouseLeftButtonDown="selectionClicked">
+        <Image Grid.Column="3" HorizontalAlignment="Left" Height="67" Margin="18,126,0,0" Grid.Row="3" VerticalAlignment="Top" Width="67" Source="Images/character_roundRed.png" MouseLeftButtonDown="selectionClicked">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -59,7 +59,7 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <Image AllowDrop="True" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="78,57,0,0" Grid.Row="3" VerticalAlignment="Top" Width="100" Source="character_handRed.png" Drop="droppedImage">
+        <Image AllowDrop="True" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="78,57,0,0" Grid.Row="3" VerticalAlignment="Top" Width="100" Source="Images/character_squareYellow.png" Drop="droppedImage">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -67,7 +67,7 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <local:CharacterSelectionControl Grid.Column="3" Margin="83,0,63,0"></local:CharacterSelectionControl>
+        <local:CharacterSelectionControl Grid.Column="3" Grid.ColumnSpan="3" Margin="10,10,42,202" Grid.RowSpan="4"/>
 
     </Grid>
 </Window>
