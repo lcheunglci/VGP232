@@ -13,6 +13,7 @@
             <Setter Property="Foreground" Value="SeaGreen"/>
             <Setter Property="Background" Value="DarkGreen"/>
         </Style>
+        <local:MyColorConverter x:Key="MyColorConverter"/>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -27,12 +28,12 @@
             <RowDefinition Height="71*"/>
             <RowDefinition Height="228*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,20,20,20" Grid.Row="1" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="20,26,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Power" VerticalAlignment="Top"/>
-        <TextBox x:Name="nameText" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="25,23,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Name}"/>
-        <TextBox Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="25,20,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Power}" />
-        <Slider x:Name="mySlider" Grid.Column="3" HorizontalAlignment="Left" Margin="57.041,20,0,0" Grid.Row="2" VerticalAlignment="Top" Value="5" Width="100"/>
-        <TextBlock x:Name="sliderText" Grid.Column="3" HorizontalAlignment="Left" Margin="203,20,0,0" Grid.Row="2" TextWrapping="Wrap" Text="{Binding ElementName=mySlider,Path=Value, Mode=OneWay}" VerticalAlignment="Top" Background="White"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="Power" VerticalAlignment="Top"/>
+        <TextBox Width="200" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Name}"/>
+        <TextBox Width="200" Grid.Column="2" HorizontalAlignment="Left" Height="23" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding Power}" />
+        <Slider x:Name="mySlider" Grid.Column="3" HorizontalAlignment="Left" Margin="65,30,0,0" Grid.Row="3" VerticalAlignment="Top" Value="5" Width="100"/>
+        <TextBlock x:Name="sliderText" Grid.Column="3" HorizontalAlignment="Left" Margin="200,30,0,0" Grid.Row="3" TextWrapping="Wrap" Text="{Binding ElementName=mySlider,Path=Value, Mode=OneWay}" VerticalAlignment="Top" Background="White"/>
         <Image Grid.Column="3" HorizontalAlignment="Left" Height="67" Margin="220,126,0,0" Grid.Row="3" VerticalAlignment="Top" Width="67" Source="Images/character_roundPurple.png" MouseLeftButtonDown="selectionClicked" RenderTransformOrigin="0.908,0.518">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -41,8 +42,8 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <RadioButton x:Name="toggleBlue" Content="On" Grid.Column="1" HorizontalAlignment="Left" Margin="37,35,0,0" Grid.Row="3" VerticalAlignment="Top"/>
-        <Rectangle Grid.Column="1" Fill="{Binding ElementName=toggleBlue, Path=IsChecked}" HorizontalAlignment="Left" Height="100" Margin="29,93,0,0" Grid.Row="3" Stroke="Black" VerticalAlignment="Top" Width="100"/>
+        <CheckBox x:Name="toggleBlue" Grid.Column="1" HorizontalAlignment="Left" Margin="10,17,0,0" Grid.Row="3" VerticalAlignment="Top" Content="{Binding Fill, ElementName=rectangle}"/>
+        <Rectangle x:Name="rectangle" Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="29,93,0,0" Grid.Row="3" Stroke="Black" VerticalAlignment="Top" Width="100" Fill="{Binding IsChecked, ElementName=toggleBlue, Converter={StaticResource MyColorConverter}}"/>
         <Image Grid.Column="3" HorizontalAlignment="Left" Height="67" Margin="121,126,0,0" Grid.Row="3" VerticalAlignment="Top" Width="67" Source="Images/character_roundYellow.png" MouseLeftButtonDown="selectionClicked">
             <Image.OpacityMask>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -67,7 +68,7 @@
                 </LinearGradientBrush>
             </Image.OpacityMask>
         </Image>
-        <local:CharacterSelectionControl Grid.Column="3" Grid.ColumnSpan="3" Margin="10,10,42,202" Grid.RowSpan="4"/>
+        <local:CharacterSelectionControl Grid.Column="3" Grid.ColumnSpan="3" Margin="10,10,40,200" Grid.RowSpan="4"/>
 
     </Grid>
 </Window>

@@ -31,7 +31,7 @@ namespace Week9
             this.DataContext = new Weapon() { Name = "Axe", Power = 10 };
 
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("zh");
-            nameText.Text = Properties.Resources.greetings;
+            //nameText.Text = Properties.Resources.greetings;
         }
 
         private void selectionClicked(object sender, MouseButtonEventArgs e)
@@ -48,29 +48,31 @@ namespace Week9
         }
     }
 
-    //public class MyColorConverter : MarkupExtension
-    //{
-    //    public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
-    //    {
-    //        if (destinationType == typeof(Color) && context.GetType() == typeof(bool))
-    //        {
-    //            return true;
-    //        }
+    public class MyColorConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool)
+            {
+                if ((bool)value == true)
+                {
+                    return "Blue";
+                }
+            }
+            return "Black";
+        }
 
-    //        return false;
-    //    }
-
-    //    public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
-    //    {
-    //        if ((bool)value == true)
-    //        {
-    //            return Brushes.Black;
-    //        }
-    //        else
-    //        {
-    //            return Brushes.Red;
-    //        }
-    //    }
-
-    //}
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is SolidColorBrush)
+            {
+                SolidColorBrush color = value as SolidColorBrush;
+                if ( color != null)
+                {
+                    return color.Color == Colors.Blue;
+                }
+            }
+            return false;
+        }
+    }
 }
