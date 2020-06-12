@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF59B2DB-9FEF-4A27-9790-7BBDEEC3A4F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Week10</RootNamespace>
+    <AssemblyName>Week10</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tiles\platformPack_tile001.png" />
+    <Resource Include="Tiles\platformPack_tile002.png" />
+    <Resource Include="Tiles\platformPack_tile003.png" />
+    <Resource Include="Tiles\platformPack_tile004.png" />
+    <Resource Include="Tiles\platformPack_tile005.png" />
+    <Resource Include="Tiles\platformPack_tile006.png" />
+    <Resource Include="Tiles\platformPack_tile007.png" />
+    <Resource Include="Tiles\platformPack_tile008.png" />
+    <Resource Include="Tiles\platformPack_tile009.png" />
+    <Resource Include="Tiles\platformPack_tile010.png" />
+    <Resource Include="Tiles\platformPack_tile011.png" />
+    <Resource Include="Tiles\platformPack_tile012.png" />
+    <Resource Include="Tiles\platformPack_tile013.png" />
+    <Resource Include="Tiles\platformPack_tile014.png" />
+    <Resource Include="Tiles\platformPack_tile015.png" />
+    <Resource Include="Tiles\platformPack_tile016.png" />
+    <Resource Include="Tiles\platformPack_tile017.png" />
+    <Resource Include="Tiles\platformPack_tile018.png" />
+    <Resource Include="Tiles\platformPack_tile019.png" />
+    <Resource Include="Tiles\platformPack_tile020.png" />
+    <Resource Include="Tiles\platformPack_tile021.png" />
+    <Resource Include="Tiles\platformPack_tile022.png" />
+    <Resource Include="Tiles\platformPack_tile023.png" />
+    <Resource Include="Tiles\platformPack_tile024.png" />
+    <Resource Include="Tiles\platformPack_tile025.png" />
+    <Resource Include="Tiles\platformPack_tile026.png" />
+    <Resource Include="Tiles\platformPack_tile027.png" />
+    <Resource Include="Tiles\platformPack_tile028.png" />
+    <Resource Include="Tiles\platformPack_tile029.png" />
+    <Resource Include="Tiles\platformPack_tile030.png" />
+    <Resource Include="Tiles\platformPack_tile031.png" />
+    <Resource Include="Tiles\platformPack_tile032.png" />
+    <Resource Include="Tiles\platformPack_tile033.png" />
+    <Resource Include="Tiles\platformPack_tile034.png" />
+    <Resource Include="Tiles\platformPack_tile035.png" />
+    <Resource Include="Tiles\platformPack_tile036.png" />
+    <Resource Include="Tiles\platformPack_tile037.png" />
+    <Resource Include="Tiles\platformPack_tile038.png" />
+    <Resource Include="Tiles\platformPack_tile039.png" />
+    <Resource Include="Tiles\platformPack_tile040.png" />
+    <Resource Include="Tiles\platformPack_tile041.png" />
+    <Resource Include="Tiles\platformPack_tile042.png" />
+    <Resource Include="Tiles\platformPack_tile043.png" />
+    <Resource Include="Tiles\platformPack_tile044.png" />
+    <Resource Include="Tiles\platformPack_tile045.png" />
+    <Resource Include="Tiles\platformPack_tile046.png" />
+    <Resource Include="Tiles\platformPack_tile047.png" />
+    <Resource Include="Tiles\platformPack_tile048.png" />
+    <Resource Include="Tiles\platformPack_tile049.png" />
+    <Resource Include="Tiles\platformPack_tile050.png" />
+    <Resource Include="Tiles\platformPack_tile051.png" />
+    <Resource Include="Tiles\platformPack_tile052.png" />
+    <Resource Include="Tiles\platformPack_tile053.png" />
+    <Resource Include="Tiles\platformPack_tile054.png" />
+    <Resource Include="Tiles\platformPack_tile055.png" />
+    <Resource Include="Tiles\platformPack_tile056.png" />
+    <Resource Include="Tiles\platformPack_tile057.png" />
+    <Resource Include="Tiles\platformPack_tile058.png" />
+    <Resource Include="Tiles\platformPack_tile059.png" />
+    <Resource Include="Tiles\platformPack_tile060.png" />
+    <Resource Include="Tiles\platformPack_tile061.png" />
+    <Resource Include="Tiles\platformPack_tile062.png" />
+    <Resource Include="Tiles\platformPack_tile063.png" />
+    <Resource Include="Tiles\platformPack_tile064.png" />
+    <Resource Include="Tiles\platformPack_tile065.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
