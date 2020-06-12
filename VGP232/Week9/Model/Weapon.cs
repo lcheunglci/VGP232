@@ -10,5 +10,11 @@ namespace Week9.Model
     {
         public int Power { get; set; }
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name + " " + Power;
+        }
+
     }
 }

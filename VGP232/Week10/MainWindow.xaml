@@ -10,8 +10,10 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="_New" Click="menuNewClick"></MenuItem>
+                <MenuItem Header="New S_kill" Click="menuSkillClick"></MenuItem>
+                <MenuItem Header="New E_nemy" Click="menuEnemyClick"></MenuItem>
                 <MenuItem Header="_Load"></MenuItem>
-                <MenuItem Header="_Save"></MenuItem>
+                <MenuItem Header="_Save" Click="menuSaveClick"></MenuItem>
                 <MenuItem Header="_Exit" Click="menuExitClick"></MenuItem>
             </MenuItem>
             <MenuItem Header="_Edit">
@@ -21,63 +23,69 @@
             </MenuItem>
         </Menu>
         <Grid DockPanel.Dock="Bottom">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"></ColumnDefinition>
-            <ColumnDefinition Width="100"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"></ColumnDefinition>
+                <ColumnDefinition Width="24.75"></ColumnDefinition>
+                <ColumnDefinition Width="75.25"/>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="20"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2">
-                <TextBox Name="rowValue" Width="30" Height="20" Margin="20 0 0 0"></TextBox>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3">
+                <TextBox Name="rowValue" Width="30" Height="20" Margin="20 0 0 0" Text="5" TextChanged="updateGridMap"></TextBox>
                 <TextBlock Margin="10">By</TextBlock>
-                <TextBox Name="columnValue" Width="30" Height="20"></TextBox>
+                <TextBox Name="columnValue" Width="30" Height="20" Text="5" TextChanged="updateGridMap"></TextBox>
             </StackPanel>
-        <ListBox Grid.Row="2" Grid.Column="1" Height="300" SelectionChanged="updateBrush">
-            <Image Source="Tiles/platformPack_tile001.png"></Image>
+            <ListBox Name="brushes" Grid.Row="2" Grid.Column="1" Height="300" SelectionChanged="updateBrush" Grid.ColumnSpan="2">
+                <!--<Image Source="Tiles/platformPack_tile001.png"></Image>
             <Image Source="Tiles/platformPack_tile002.png"></Image>
             <Image Source="Tiles/platformPack_tile003.png"></Image>
             <Image Source="Tiles/platformPack_tile004.png"></Image>
             <Image Source="Tiles/platformPack_tile005.png"></Image>
             <Image Source="Tiles/platformPack_tile006.png"></Image>
             <Image Source="Tiles/platformPack_tile007.png"></Image>
-            <Image Source="Tiles/platformPack_tile008.png"></Image>
-        </ListBox>
-        
-        <UniformGrid x:Name="mapGrid" 
-                     Columns="5" Rows="5"
+            <Image Source="Tiles/platformPack_tile008.png"></Image>-->
+            </ListBox>
+            <ListBox Name="lbSkills" Grid.Column="4" Grid.Row="2">
+
+            </ListBox>
+            <UniformGrid x:Name="mapGrid" 
+                     Columns="{Binding Text, ElementName=columnValue}" Rows="{Binding Text, ElementName=rowValue}"
                      Width="200" Height="200"
-                     Grid.Row="2" Grid.Column="2">
-            
-            <Border Background="Black" MouseLeftButtonDown="Border_MouseLeftButtonDown" BorderThickness="1"></Border>
-            <Border Background="AliceBlue"></Border>
-            <Border Background="GreenYellow"></Border>
-            <Border Background="BlueViolet"></Border>
-            <Border Background="OrangeRed"></Border>
-            <Border Background="Teal"></Border>
-            <Border Background="Orange"></Border>
-            <Border Background="GreenYellow"></Border>
-            <Border Background="BlueViolet"></Border>
-            <Border Background="OrangeRed"></Border>
-            <Border Background="Orange"></Border>
-            <Border Background="GreenYellow"></Border>
-            <Border Background="BlueViolet"></Border>
-            <Border Background="OrangeRed"></Border>
-            <Border Background="Teal"></Border>
-            <Border Background="Orange"></Border>
-            <Border Background="GreenYellow"></Border>
-            <Border Background="BlueViolet"></Border>
-            <Border Background="OrangeRed"></Border>
-            <Border Background="Teal"></Border>
-            <Border Background="Orange"></Border>
-        </UniformGrid>
-    </Grid>
+                     Grid.Row="2" Grid.Column="3" Margin="0,50">
+
+                <Border Background="Black" MouseLeftButtonDown="Border_MouseLeftButtonDown" BorderThickness="1">
+                    <TextBlock Visibility="Hidden" Text="1" />
+                </Border>
+                <Border Background="AliceBlue"></Border>
+                <Border Background="GreenYellow"></Border>
+                <Border Background="BlueViolet"></Border>
+                <Border Background="OrangeRed"></Border>
+                <Border Background="Teal"></Border>
+                <Border Background="Orange"></Border>
+                <Border Background="GreenYellow"></Border>
+                <Border Background="BlueViolet"></Border>
+                <Border Background="OrangeRed"></Border>
+                <Border Background="Orange"></Border>
+                <Border Background="GreenYellow"></Border>
+                <Border Background="BlueViolet"></Border>
+                <Border Background="OrangeRed"></Border>
+                <Border Background="Teal"></Border>
+                <Border Background="Orange"></Border>
+                <Border Background="GreenYellow"></Border>
+                <Border Background="BlueViolet"></Border>
+                <Border Background="OrangeRed"></Border>
+                <Border Background="Teal"></Border>
+                <Border Background="Orange"></Border>
+            </UniformGrid>
+        </Grid>
     </DockPanel>
 
 </Window>

@@ -12,8 +12,8 @@
                 <ItemContainerTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="{Binding Face}"></Image>
-                        <TextBlock Text="{Binding Name}"/>
-                        <TextBlock Text="{Binding Dialogue}"></TextBlock>
+                        <TextBlock Margin="10" Text="{Binding Name}"/>
+                        <TextBlock Margin="10" Text="{Binding Dialogue}"></TextBlock>
                     </StackPanel>
                 </ItemContainerTemplate>
             </ListBox.ItemTemplate>

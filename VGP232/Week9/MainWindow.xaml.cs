@@ -25,10 +25,11 @@ namespace Week9
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Weapon myWeapon = new Weapon() { Name = "Axe", Power = 10 };
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new Weapon() { Name = "Axe", Power = 10 };
+            this.DataContext = myWeapon;
 
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("zh");
             //nameText.Text = Properties.Resources.greetings;
@@ -45,6 +46,11 @@ namespace Week9
         {
             Image droppedOnTo = e.Source as Image;
             droppedOnTo.Source = (ImageSource)e.Data.GetData(DataFormats.Bitmap);
+        }
+
+        private void ShowCurrentWeaponState(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(myWeapon.ToString());
         }
     }
 

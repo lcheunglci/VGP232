@@ -69,6 +69,6 @@
             </Image.OpacityMask>
         </Image>
         <local:CharacterSelectionControl Grid.Column="3" Grid.ColumnSpan="3" Margin="10,10,40,200" Grid.RowSpan="4"/>
-
+        <Button Click="ShowCurrentWeaponState">Show</Button>
     </Grid>
 </Window>
