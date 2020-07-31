@@ -1,0 +1,42 @@
+﻿<Window x:Class="Week4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week4"
+        mc:Ignorable="d"
+        Title="Week 4" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="83*"></RowDefinition>
+            <RowDefinition Height="45*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Hello welcome to my app" HorizontalAlignment="Left" Margin="58,41,0,0" VerticalAlignment="Top" Height="26" Width="74"/>
+        <Button Grid.Column="1" Background="AliceBlue" HorizontalAlignment="Left" VerticalAlignment="Center" Width="201" FontSize="36" Click="Button_Click" Height="120" Margin="110,18,0,25">
+            <StackPanel>
+                <TextBlock Foreground="Bisque">Increase</TextBlock>
+                <TextBlock Background="Orange">Something</TextBlock>
+                <Button FontSize="12" Width="100" MouseDown="Button_MouseDown" PreviewMouseDown="Button_PreviewMouseDown">Press me</Button>
+            </StackPanel>
+        </Button>
+        <TextBlock Name="MyTextBlock" HorizontalAlignment="Left" Margin="33,131,0,0" TextWrapping="Wrap" Text="Something important" VerticalAlignment="Top" Height="32" Width="58"/>
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <Button Margin="5" Click="OpenClicked" >Open</Button>
+            <Button Margin="5" Click="SaveClicked">Save</Button>
+            <Button Margin="5" Click="AddClicked">Add</Button>
+            <Button Margin="5" Click="EditClicked">Edit</Button>
+            <Button Margin="5" Click="RemoveClicked">Remove</Button>
+        </StackPanel>
+        <ListBox x:Name="WeaponsListBox" Grid.Column="1" HorizontalAlignment="Left" Height="166" Grid.Row="1" VerticalAlignment="Top" Width="396"/>
+        <RadioButton Content="Damage" Grid.Column="2" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Checked="SortChecked"/>
+        <RadioButton Content="Name" Grid.Column="2" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Checked="SortChecked"/>
+        <ComboBox Name="ShowOnlyElementComboBox" Grid.Column="2" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="120" Grid.Row="2" SelectionChanged="SelectedElement"/>
+    </Grid>
+</Window>
