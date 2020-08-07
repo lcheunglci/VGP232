@@ -37,7 +37,8 @@
                 </ListBox.ItemsPanel>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Image Width="100" Height="100" Source="{Binding Name}"></Image>
+                        <Image Width="100" Height="100" Source="{Binding}"></Image>
+                        <!--<Image Width="100" Height="100" Source="{Binding Name}"></Image>-->
                     </DataTemplate>
                 </ListBox.ItemTemplate>
                 

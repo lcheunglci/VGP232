@@ -24,7 +24,8 @@ namespace Week5ImageLoader
     public partial class MainWindow : Window
     {
         Spritesheet sheet;
-        List<SpriteInfo> images = new List<SpriteInfo>();
+        //List<SpriteInfo> images = new List<SpriteInfo>();
+        List<string> images = new List<string>();
 
         public MainWindow()
         {
@@ -47,7 +48,8 @@ namespace Week5ImageLoader
             {
                 for (int i = 0; i < openFile.FileNames.Length; i++)
                 {
-                    images.Add(new SpriteInfo() { Name = openFile.FileNames[i] });
+                    //images.Add(new SpriteInfo() { Name = openFile.FileNames[i] });
+                    images.Add(openFile.FileNames[i]);
                     ImageListBox.Items.Refresh();
                 }
             }
@@ -55,16 +57,17 @@ namespace Week5ImageLoader
 
         private void GenerateClicked(object sender, RoutedEventArgs e)
         {
-            List<string> imagePaths = new List<string>();
-            for (int i = 0; i < images.Count; i++)
-            {
-                imagePaths.Add(images[i].Name);
-            }
+            //List<string> imagePaths = new List<string>();
+            //for (int i = 0; i < images.Count; i++)
+            //{
+            //    imagePaths.Add(images[i].Name);
+            //}
             sheet.Columns = 6;
             sheet.OutputDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             sheet.OutputFile = "animals.png";
             sheet.IncludeMetaData = true;
-            sheet.InputPaths = imagePaths;
+            //sheet.InputPaths = imagePaths;
+            sheet.InputPaths = images;
             sheet.Generate(true);
 
             if (MessageBoxResult.Yes == MessageBox.Show("Success", "Sprite sheet generated. Would you like to view it", MessageBoxButton.YesNo))
