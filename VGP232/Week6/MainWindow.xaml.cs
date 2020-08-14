@@ -30,9 +30,9 @@ namespace Week6
             InitializeComponent();
             aes = new AesCryptoServiceProvider();
 
-            var rsa = new RSACryptoServiceProvider(1024);
-            File.WriteAllText("private.xml", rsa.ToXmlString(true));
-            rsa.FromXmlString(File.ReadAllText("private.xml"));
+            //var rsa = new RSACryptoServiceProvider(1024);
+            //File.WriteAllText("private.xml", rsa.ToXmlString(true));
+            //rsa.FromXmlString(File.ReadAllText("private.xml"));
 
             // File.WriteAllBytes("file", aes.IV);
             // aes.IV;
