@@ -57,35 +57,39 @@ namespace Week02
 
             //FunctionExamples();
 
-            List<int> numbers = new List<int>();
-            numbers.Add(123);
-            numbers.Add(223);
-            numbers.Add(323);
-            numbers.Add(423);
-            numbers.Add(623);
-            numbers.RemoveAt(4);
+            // CharacterCollection results = new CharacterCollection();
+            
 
-            for (int i = 0; i < numbers.Count; i++)
-            {
-                Console.WriteLine(numbers[i]);
-            }
 
-            List<string> names = new List<string>(){ "HaoRu", "Rodrigo", "Jaime" };
-            foreach (var name in names)
-            {
-                Console.WriteLine(name);
-            }
+            //List<int> numbers = new List<int>();
+            //numbers.Add(123);
+            //numbers.Add(223);
+            //numbers.Add(323);
+            //numbers.Add(423);
+            //numbers.Add(623);
+            //numbers.RemoveAt(4);
 
-            Dictionary<int, string> hotelRooms = new Dictionary<int, string>();
-            hotelRooms[100] = "Bruce";
-            hotelRooms[102] = "Joe";
-            hotelRooms[200] = "Jenny";
-            hotelRooms[201] = "Mark";
+            //for (int i = 0; i < numbers.Count; i++)
+            //{
+            //    Console.WriteLine(numbers[i]);
+            //}
 
-            foreach (var kvp in hotelRooms)
-            {
-                Console.WriteLine("Room: {0} ---- Occupant: {1}", kvp.Key, kvp.Value);
-            }
+            //List<string> names = new List<string>(){ "HaoRu", "Rodrigo", "Jaime" };
+            //foreach (var name in names)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+            //Dictionary<int, string> hotelRooms = new Dictionary<int, string>();
+            //hotelRooms[100] = "Bruce";
+            //hotelRooms[102] = "Joe";
+            //hotelRooms[200] = "Jenny";
+            //hotelRooms[201] = "Mark";
+
+            //foreach (var kvp in hotelRooms)
+            //{
+            //    Console.WriteLine("Room: {0} ---- Occupant: {1}", kvp.Key, kvp.Value);
+            //}
         }
 
         private static void FunctionExamples()

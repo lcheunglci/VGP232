@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Week02
 {
-    public class Character
+    public class Character : IAttackable
     {
         public int HP { get; set; }
         public int MP { get; set; }
@@ -23,5 +23,9 @@ namespace Week02
             HP -= damage;
         }
 
+        public void Attack(int damage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
