@@ -1,0 +1,18 @@
+﻿<Window x:Class="Week4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week4"
+        mc:Ignorable="d"
+        Title="Week 4" Height="450" Width="800">
+    <StackPanel>
+        <TextBlock Name="txtWelcome" Margin="20" HorizontalAlignment="Center" Height="127" Width="211">Welcome to my app</TextBlock>
+        <Button Width="100" Height="80" Click="ButtonPressed">Press me</Button>
+        <TextBlock Margin="10">Enter your name:</TextBlock>
+        <TextBox Margin="10" x:Name="tbInputName"></TextBox>
+        <Button Width="100" Click="SayHelloPressed">Say hello</Button>
+        <Button Width="100" Click="IncrementCountPressed">+1</Button>
+        <TextBlock x:Name="txtCount" Margin="10" TextAlignment="Center">Count: 0</TextBlock>
+    </StackPanel>
+</Window>
