@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="D:\Users\lcheung\Documents\VGP232\FA20\VGP232_Assignment3\TextureAtlasLib\TextureAtlasLib.csproj" />
+    <ProjectReference Include="..\TextureAtlasLib\TextureAtlasLib.csproj" />
   </ItemGroup>
 
 </Project>
