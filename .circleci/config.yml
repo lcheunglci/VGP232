@@ -10,3 +10,4 @@
      steps:
        - checkout
        - run: dotnet build VGP232/VGP232.sln
+       - run: dotnet test VGP232/VGP232.sln
