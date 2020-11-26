@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore VGP232/VGP232.sln
     - name: Build
       run: dotnet build VGP232/VGP232.sln --configuration Release --no-restore
     - name: Test
