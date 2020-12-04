@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week5ImageLoader", "Week5Im
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextureAtlasLib", "TextureAtlasLib\TextureAtlasLib.csproj", "{39863F04-0F95-4970-98CF-C24E6FBA9E51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week6", "Week6\Week6.csproj", "{899BF8C3-2B47-4C54-86A1-B97BA5AE9F38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week6", "Week6\Week6.csproj", "{899BF8C3-2B47-4C54-86A1-B97BA5AE9F38}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Week9", "Week9\Week9.pyproj", "{EC8FD519-5FBB-47ED-84BA-CCCB89BC0F10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week9WPF", "Week9WPF\Week9WPF.csproj", "{F96065BD-9900-4831-A0EB-8E8D7ECB6434}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,12 @@ Global
 		{899BF8C3-2B47-4C54-86A1-B97BA5AE9F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{899BF8C3-2B47-4C54-86A1-B97BA5AE9F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{899BF8C3-2B47-4C54-86A1-B97BA5AE9F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC8FD519-5FBB-47ED-84BA-CCCB89BC0F10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC8FD519-5FBB-47ED-84BA-CCCB89BC0F10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96065BD-9900-4831-A0EB-8E8D7ECB6434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F96065BD-9900-4831-A0EB-8E8D7ECB6434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F96065BD-9900-4831-A0EB-8E8D7ECB6434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96065BD-9900-4831-A0EB-8E8D7ECB6434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
