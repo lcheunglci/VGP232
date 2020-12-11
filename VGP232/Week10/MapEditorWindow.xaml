@@ -1,0 +1,43 @@
+﻿<Window x:Class="Week10.MapEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week10"
+        mc:Ignorable="d"
+        Title="MapEditorWindow" Height="450" Width="800">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="New" Command="New"></MenuItem>
+                <MenuItem Header="Open" Command="Open"></MenuItem>
+                <MenuItem Header="Save" Click="SaveProject"></MenuItem>
+                <MenuItem Header="Close"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Import Tiles" Click="ImportTiles"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel DockPanel.Dock="Left">
+            <TextBlock>Level:</TextBlock>
+            <TextBox></TextBox>
+            <StackPanel Margin="5" Orientation="Horizontal">
+                <TextBlock Margin="2">Columns</TextBlock>
+                <TextBox Name="tbColumns" TextChanged="MapGridUpdated">5</TextBox>
+                <TextBlock Margin="2">Rows</TextBlock>
+                <TextBox Name="tbRows" TextChanged="MapGridUpdated">5</TextBox>
+            </StackPanel>
+            <ListBox Name="lbTileBrushes" Width="150">
+
+            </ListBox>
+        </StackPanel>
+
+        <TextBlock DockPanel.Dock="Right" Width="150">Test</TextBlock>
+        <UniformGrid Name="ugMap" Columns="{Binding ElementName=tbColumns, Path=Text}" Rows="{Binding ElementName=tbRows, Path=Text}">
+            <Border Background="Cyan" Tag=""></Border>
+        </UniformGrid>
+
+    </DockPanel>
+</Window>

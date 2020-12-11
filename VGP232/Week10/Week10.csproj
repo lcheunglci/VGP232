@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="character_squareGreen.png" />
+    <None Remove="character_squarePurple.png" />
+    <None Remove="character_squareRed.png" />
+    <None Remove="character_squareYellow.png" />
+    <None Remove="Tiles\platformPack_tile001.png" />
+    <None Remove="Tiles\platformPack_tile002.png" />
+    <None Remove="Tiles\platformPack_tile003.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\character_squareGreen.png" />
+    <Resource Include="Images\character_squarePurple.png" />
+    <Resource Include="Images\character_squareRed.png" />
+    <Resource Include="Images\character_squareYellow.png" />
+    <Resource Include="Tiles\platformPack_tile001.png" />
+    <Resource Include="Tiles\platformPack_tile002.png" />
+    <Resource Include="Tiles\platformPack_tile003.png" />
+  </ItemGroup>
+
+</Project>
